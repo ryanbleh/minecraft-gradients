@@ -1,8 +1,12 @@
 from PIL import Image
 
-#Edit your gradient here 
+#Edit your gradient here
+
+#Start Color
 color1 = (201, 24, 42)
+#End Color
 color2 = (24, 201, 48)
+#Number of blocks in gradient
 num_steps = 32
 #Follow this https://mcreator.net/wiki/obtaining-minecraft-textures tutorial
 #And copy & paste file path to the folder below **REQUIRED**

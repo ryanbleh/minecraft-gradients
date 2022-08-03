@@ -3,7 +3,7 @@
     <head>
         <title>website</title>
 
-        <script src="index.css"></script>
+        <link rel="stylesheet" href="index.css">
         <script src="index.js"></script>
 
         <style>
@@ -13,7 +13,24 @@
     </head>
 
     <body>
-        <h1>hello world</h1>
+        <input type="color" id="start_color" name="start_color">
+        <label for="start_color">Start Color</label>
+        <br>
+        <input type="color" id="end_color" name="end_color">
+        <label id ="end_color" for="end_color">End Color</label>
+        <br>
+        <input type="range" min="3" max="300" value="24" id="num_steps">
+        <p id="num_steps_value" for="num_steps">1</p>
+        <label for="num_steps">Number of Steps in the Gradient</label>
+        <br>
+        <button onclick="generate_gradient()">Generate Gradient</button>
+        
 
     </body>
-</html>;
+
+    <script>let slider = document.getElementById("num_steps")   
+        document.getElementById("num_steps_value").innerHTML = document.getElementById("num_steps").value
+        slider.oninput = function() {
+            document.getElementById("num_steps_value").innerHTML = this.value
+        }</script>
+</html>

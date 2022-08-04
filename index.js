@@ -15,7 +15,6 @@ function generate_gradient() {
     })}
     steps.push(end_color)
     let blocks = []
-    console.log(steps)
     for (let step = 0; step < steps.length; step++) {
         //console.log(step)
         let top_block = ['N/A',0]
@@ -32,10 +31,15 @@ function generate_gradient() {
         }
     blocks.push(top_block[0])
     }
-    console.log(blocks)
     let list = document.createElement("p")
     list.innerHTML = blocks
-    document.getElementsByTagName('body')[0].appendChild(list);
+    for (let block = 0; block < blocks.length; block++){
+        let img = document.createElement("img")
+        img.src = "minecraft_blocks/" + blocks[block]
+        img.width = 12
+        img.height = 12
+        document.getElementsByTagName('body')[0].appendChild(img);
+    }
 }
 
 function hexToRgb(hex) {
@@ -46,4 +50,10 @@ function hexToRgb(hex) {
       b: parseInt(result[3], 16)
     } : null;
   }
-  
+
+function genRandHex(){
+    let randHex1 = [...Array(6)].map(() => Math.floor(Math.random() * 16).toString(16)).join('');
+    let randHex2 = [...Array(6)].map(() => Math.floor(Math.random() * 16).toString(16)).join('');
+    document.getElementById("start_color").value = "#" + randHex1
+    document.getElementById("end_color").value = "#" + randHex2 
+} 

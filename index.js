@@ -35,7 +35,7 @@ function generate_gradient() {
     list.innerHTML = blocks
     for (let block = 0; block < blocks.length; block++){
         let img = document.createElement("img")
-        img.src = "minecraft_blocks/" + blocks[block]
+        img.src = "minecraft-gradients/assets/" + blocks[block]
         img.width = 12
         img.height = 12
         document.getElementsByTagName('body')[0].appendChild(img);
